@@ -109,70 +109,105 @@ body {
 }
 
 /*메뉴*/
-/*메누 네비게이터*/
+
 .topNav {
+    float: left;
+    clear: left;
 	width: 100%;
-	margin: 0 auto;
-	background-color: #414141;
+	margin: 0 auto 0 auto;
+    background-color:#414141;
 	height: 68px;
-	clear:left;
-	float:left;
 }
 
 .NavBox {
-	background-color: #414141;
 	height: 68px;
 	margin: auto;
 	width: 1024px;
 
 }
 .NavBoxLeft {
-    width:700px
-	margin-top: 0px;
-	padding-top: 20px;
-	float: left;
+    width: 700px;
+    height: 68px;
+	margin: 0 0 0 0;
+    float: left; clear: left;
+    font-weight: bold; line-height: 68px;
 }
 .NavBoxLeft span {	
-	padding: 0px 30px 0px 0px;
+	padding:0 30 0 0;
 }
-.NavBoxLeft span a{
-	color: #FF7200;
+.NavBoxRight span {	
+	padding:0 10 0 0;
+}
+
+.NavBoxLeft_me{
 	text-decoration: none;
-	color: #FFFFFF;
-	font-size:15pt;
-    font-weight: 500;
 }
-.NavBoxLeft span a:hover{
+.NavBoxLeft_me a{
+	text-decoration: none;
+    color: #FF7200;
+    font-size: 16pt;
+}
+.NavBoxLeft_me a:hover{
+	text-decoration: none;
+	color: #00F8F3;
+}
+.NavBoxLeft_Default{
+	color: white;
+	text-decoration: none;
+    font-size: 12pt;
+}
+.NavBoxLeft_Default a{
+	text-decoration: none;
+    color: #fff;
+}
+.NavBoxLeft_Default a:hover{
 	text-decoration: none;
 	color: #00F8F3;
 }
 
+
 .NavBoxRight{
-	color: #F56300;
-	float: right;
+	font-size:11pt;font-weight: bold;
+    float: left;
 	text-align: center;
 	background-color: #5F5F5F;
-	padding-top: 25px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 24px;
-	width: 240px;
+	padding: 0 0 0 0;
+    width: 324px;
+    height: 68px;
+    line-height: 68px;
+    	
 }
-.NavBoxRight span {	
-	padding: 0px 10px 10px 0px;
+
+.NavBoxLeftCenter {	
+    color: #CECECE
+
 }
-.NavBoxRight a{
-    color: #CDEBF0;
-	text-decoration: none;
-	color: #FFFFFF;
-	font-size:12pt;
-    font-weight: 500;
-	
+.NavBoxRight_login {
+    padding:0 30 0 0;
+    
 }
+.NavBoxRight_join {
+    padding:0 30 0 0;
+    
+}
+
+
+.NavBoxRight_join a{
+    color: white;
+    text-decoration: none;
+    
+}
+.NavBoxRight_login a{
+    color: 7accc8;
+    text-decoration: none;
+    
+}
+
 .NavBoxRight a:hover{
-	color: #E7F507;
+	color: #e3ff00;
 	text-decoration: none;
 }
+
 /*메인비주얼*/
 
 .MainVisBox {

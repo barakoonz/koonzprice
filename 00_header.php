@@ -116,19 +116,26 @@
     </div>
     <!--메뉴부분 -->
     <nav class="topNav">
-        <div class="NavBox">
-            <div class="NavBoxLeft">		
-                <span><a href="<?=$PageName[0]?>.php">Home</a></span>
-                <span><a href="<?=$PageName[1]?>.php">마케팅앱</a></span>
-                <span><a href="<?=$PageName[2]?>.php">코드배너</a></span>
-                <span><a href="<?=$PageName[3]?>.php">수익금내역</a></span>
-                <span><a href="<?=$PageName[4]?>.php">게시판</a></span>
-                <span><a href="<?=$PageName[5]?>.php">회사소개</a></span>
+        <div class="Box1024">
+            <div class="NavBoxLeft">
+                <span class="NavBoxLeft_me"><a href="<?=$PageName[0]?>.php">Home</a></span>
+                <span class="NavBoxLeft_Default"><a href="<?=$PageName[1]?>.php">마케팅앱</a></span>
+                <span class="NavBoxLeft_Default"><a href="<?=$PageName[2]?>.php">코드배너</a></span>
+                <span class="NavBoxLeft_Default"><a href="<?=$PageName[3]?>.php">수익금내역</a></span>
+                <span class="NavBoxLeft_Default"><a href="<?=$PageName[4]?>.php">게시판</a></span>
+                <span class="NavBoxLeft_Default"><a href="<?=$PageName[5]?>.php">회사소개</a></span>
             </div>
             <div class="NavBoxRight">
-                <span><a href="<?=$PageName[6]?>.php">회원가입</a></span>
-                <span>|</span>
-                <span><a href="#" class="btn-example" onclick="layer_open('loginPopup');return false;">로그인</a></span>
+                <!--로그인전-->
+                <span class="NavBoxRight_join">
+                    <a href="<?=$PageName[6]?>.php">회원가입</a>
+                </span>
+                <span class="NavBoxLeftCenter">|</span>
+                <span class="NavBoxRight_login">
+                    <a href="#" class="btn-example" onclick="layer_open('loginPopup');return false;">로그인</a>
+                </span>
+                <!--로그인전-->
+                <!--로그인후-->
             </div>
         </div>
     </nav>
