@@ -126,16 +126,19 @@
                 <span class="NavBoxLeft_Default"><a href="<?=$PageName[5]?>.php">회사소개</a></span>
             </div>
             <div class="NavBoxRight">
-                <!--로그인전-->
+                <!--로그인후-->
+                <span class="loginSUC_name">강철수님!</span>
+                <span class="loginSUC_ment">반갑습니다~</span>
+
                 <span class="NavBoxRight_join">
-                    <a href="<?=$PageName[6]?>.php">회원가입</a>
+                    <a href="<?=$PageName[6]?>.php">회원정보수정</a>
                 </span>
                 <span class="NavBoxLeftCenter">|</span>
                 <span class="NavBoxRight_login">
-                    <a href="#" class="btn-example" onclick="layer_open('loginPopup');return false;">로그인</a>
+                    <a href="#">로그아웃</a>
                 </span>
                 <!--로그인전-->
-                <!--로그인후-->
+                
             </div>
         </div>
     </nav>

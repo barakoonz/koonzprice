@@ -136,7 +136,7 @@ body {
 	padding:0 30 0 0;
 }
 .NavBoxRight span {	
-	padding:0 10 0 0;
+	padding:0 0 0 0;
 }
 
 .NavBoxLeft_me{
@@ -167,27 +167,25 @@ body {
 
 
 .NavBoxRight{
-	font-size:11pt;font-weight: bold;
-    float: left;
-	text-align: center;
-	background-color: #5F5F5F;
-	padding: 0 0 0 0;
+	float: right;
+	text-align: right;
     width: 324px;
     height: 68px;
     line-height: 68px;
     	
 }
 
+
 .NavBoxLeftCenter {	
-    color: #CECECE
+    color: #CECECE;
+    margin: 0 5 0 5;
 
 }
 .NavBoxRight_login {
-    padding:0 30 0 0;
-    
+    font-size:11pt;font-weight: bold;
 }
 .NavBoxRight_join {
-    padding:0 30 0 0;
+    font-size:11pt;font-weight: bold;
     
 }
 
@@ -611,3 +609,23 @@ body {
 
 
 
+
+.loginSUC_name {
+    color: #6dcff6;
+    font-size: 9pt; font-weight: bold;
+    
+    
+}
+.loginSUC_ment {
+    color: #f89e0e;
+    font-size: 8pt; font-weight: normal;
+    margin: 0 20 0 0;
+    
+}
+
+
+
+.loginSUC_icon {
+
+    
+}
