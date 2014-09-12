@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+.BBS_add{
+    width: 1024px;
+    float: left; clear: left;
+    margin: 30 0 0 0;
+}
+
+.BBS_add textarea  {
+    width:1024px; height: 140px;
+	color: #ABABAB;
+	font-size: 10pt;
+    font-weight: normal;
+	background-color: #FFFFFF;
+	border: 1px solid #E1E1E1;
+    padding: 10px;
+
+}
+
+.BBS_add_button {
+    width: auto;
+    float: right; clear: left
+}
+
+.BBS_icon_QN {
+    width:60px; height: 52px;
+    margin: 30 40 0 40;
+    float: left; clear: left;
+}
+.BBS_icon_R {
+    width:37px; height:41px ; 
+    margin: 10 10 0 0;
+    float: left; clear: left;
+}
+
+.BBS_text {
+    width:884px;
+    float: right;
+    margin: 20 0 0 0;
+}
+.BBS_text_id {
+    width:884px;
+    float: right;
+    color: #2a2a2a; font-size: 12pt; font-weight: bold;
+}
+.BBS_comment_id {
+    width:837px;float: right;
+    color: #3b8ba3; font-size: 10pt; font-weight: bold;
+    margin: 20 0 0 0;
+}
+.BBS_text_date {
+    width:884px;
+    float: right;
+    color: #d0d0d0; font-size: 8pt; font-weight: normal;
+}
+.BBS_comment_date {
+    width:837px;
+    float: right;
+    color: #d0d0d0; font-size: 8pt; font-weight: normal;
+    margin: 10 0 0 0;
+}
+.BBS_text_contents {
+    width:884px;
+    float: right;
+    color: #9f9f9f; font-size: 10pt; font-weight: normal;
+}
+.BBS_comment_contents {
+    width:837px;
+    float: right;
+    color: #9f9f9f; font-size: 9pt; font-weight: normal;
+}
+
+.BBS_comment_box {
+
+    width:884px;
+    float: right; clear: right;
+    border-top: 1px;
+    border-top-color: #dedede;
+    border-top-style:dotted;
+}

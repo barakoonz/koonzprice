@@ -1,0 +1,578 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body {
+	font-family: "Nanum Gothic";
+	overflow: scroll;
+	margin: 0;
+	width: 100%;
+    min-width: 1050px;
+	background-color: #FFFFFF;
+    height:100%;
+}
+.Box1024{
+	width: 1024px;
+	clear: left;
+	margin: 0 auto 0 auto;
+    
+}
+
+.HR_orange100{
+	float: left;
+	width: 100%;
+    height: 1px;
+    border-style:solid;
+    border-color: #ff7200;
+    border-bottom: 0; border-left: 0; border-right: 0;
+    margin: 20 0 0 0;
+    
+}
+.HR_gray100{
+	float: left;
+	width: 100%;
+    height: 1px;
+    border-style:solid;
+    border-color: #dedede;
+    border-bottom: 0; border-left: 0; border-right: 0;
+    margin: 20 0 0 0;
+}
+
+.SubTitleBig{
+	color: black;
+	font-weight: normal;
+	font-size: 25pt;
+	float: left;
+    margin: 40 0 0 0;
+}
+.SubTitleSmall{
+	color: #C7C7C7;
+	font-weight: normal;
+	font-size: 13pt;
+	float: left;
+	margin: 55 0 0 10;
+	font-style: normal;
+}
+
+/*헤더*/
+
+.HeaderTop {
+	width: 1024px;
+	margin: 0 auto;
+}
+.HeaderTopBI {
+	width: 512px;
+	float: left;
+	margin-top: 28px;
+	margin-bottom: 28px;
+	height: 65px;
+}
+.HeaderTopCallmeBox {
+	height: 65px;
+	text-align: right;
+	float: left;
+	width: 512px;
+	margin-top: 38px;
+	margin-bottom: 20px;
+}
+.HeaderTopCallmePicBox {
+	width: 117px;
+	float: right;
+	border-right: 1px solid #BCBCBC;
+	padding-right: 10px;
+	margin-top: 17px;
+	margin-bottom: 16px;
+}
+.HeaderCallmeTelEmailBox {
+	padding-left: 10px;
+	height: 37px;
+	float: right;
+	text-align: left;
+	margin-top: 14px;
+}
+.HeaderCallmeTelEmailBox h1{
+	font-weight: bolder;
+	font-size: 18px;
+	margin: 0px;
+	color: #858585;
+}
+.HeaderCallmeTelEmailBox h2{
+	font-weight: normal;
+	font-size: 11px;
+	margin: 0px;
+}
+.HeaderCallmeTelEmailBox a{
+	color: #B3B3B3;
+	text-decoration: none;
+}
+.HeaderCallmeTelEmailBox a:hover{
+	color: #F30190;
+}
+
+/*메뉴*/
+/*메누 네비게이터*/
+.topNav {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #414141;
+	height: 68px;
+	clear:left;
+	float:left;
+}
+
+.NavBox {
+	background-color: #414141;
+	height: 68px;
+	margin: auto;
+	width: 1024px;
+
+}
+.NavBoxLeft {
+    width:700px
+	margin-top: 0px;
+	padding-top: 20px;
+	float: left;
+}
+.NavBoxLeft span {	
+	padding: 0px 30px 0px 0px;
+}
+.NavBoxLeft span a{
+	color: #FF7200;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size:15pt;
+    font-weight: 500;
+}
+.NavBoxLeft span a:hover{
+	text-decoration: none;
+	color: #00F8F3;
+}
+
+.NavBoxRight{
+	color: #F56300;
+	float: right;
+	text-align: center;
+	background-color: #5F5F5F;
+	padding-top: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 24px;
+	width: 240px;
+}
+.NavBoxRight span {	
+	padding: 0px 10px 10px 0px;
+}
+.NavBoxRight a{
+    color: #CDEBF0;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size:12pt;
+    font-weight: 500;
+	
+}
+.NavBoxRight a:hover{
+	color: #E7F507;
+	text-decoration: none;
+}
+/*메인비주얼*/
+
+.MainVisBox {
+	clear: left;
+	width: 1024px;
+	margin: auto;
+	height: 410px;
+	padding-left: 0px;
+	background-image: url(../img/mainVisual.png);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+}
+.MainVisBox h1 {
+	height: auto;
+	color: #F54E02;
+	font-size: 20pt;
+	font-variant: normal;
+	font-weight: normal;
+	padding-top: 30px;
+	padding-left: 12px;
+	min-width: 500px;
+	line-height:1em;
+}
+.MainVisBox h2 {
+	height: auto;
+	color: #676767;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 18pt;
+	padding-top: 5px;
+	padding-left: 35px;
+	line-height: 1.1em;
+}
+.MainVisBox h3 {
+	height: auto;
+	color: #000000;
+	font-weight: bolder;
+	font-size: 25pt;
+	padding-left: 18px;
+	line-height: 0.1em;
+}
+.MainVisBox h4 {
+	height: auto;
+	color: #35A8A6;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 18pt;
+	padding-top: 5px;
+	padding-left: 25px;
+	padding-bottom: 20px;
+	width: auto;
+}
+.mainMemJoin {
+	width: 225px;
+    height: 70px;
+	color: #FFFFFF;
+	font-style: normal;
+	font-size: 20px;
+    margin: 10px;
+    vertical-align:bottom;
+	border-radius: 8px;
+	background-color: #ff7200;
+	margin-left: 150px;
+	font-weight: bolder;
+	background-image: url(../img/join_mem_icon.png);
+	background-repeat: no-repeat;
+	background-position: 0% 70%;
+	background-position: 10% 50%;
+    line-height: 70px;
+	text-indent: 90px;
+
+}
+.mainMemJoin a{
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}
+.mainMemJoin:hover{
+	background-color: #fe8d32;
+}
+
+
+
+
+/*메인콘텐츠1 serice introduction*/
+.ContentsBox1 {
+	margin:0;
+	width: 100%;
+	background-color: #efefef;
+    float: left;
+    clear: left;
+}
+
+.ContentsBoxTitle {
+    width: 1024px;
+    padding: 20 0 0 0;
+	font-weight: bolder;
+	font-size: 14pt;
+	color: #424242;
+    clear: left;
+    float:left;
+}
+.ContentsBox1_IMG {
+	width: 300px;
+	text-align: center;
+	float: left;
+	padding-top: 25px;
+}
+.ContentsBox1_IMG_text {
+	font-size: 10pt;
+	font-variant: normal;
+	font-weight: normal;
+	text-align: left;
+	margin:0 10 30 10;
+}
+.ContentsBox1_IMG_title {
+	font-size: 14pt;
+	font-variant: normal;
+	font-weight: bolder;
+	text-align: center;
+	margin:10px
+}
+.ContentsBox1_CenterArrow {
+	width: 32px;
+	float: left;
+	text-align: center;
+	padding-top: 68px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+ /*메인콘텐츠2 EASY TO USE*/
+
+.ContentsBox2{
+	width: 1024px;
+	margin-left: auto;
+    margin-right: auto;
+	clear: left;
+}
+
+.ContentsBox2Headcopy{
+	font-size: 26pt;
+	font-weight: bolder;
+	text-align: center;
+	color: #35A8A6;
+    padding: 40 0 40 0;
+    clear: left;
+    
+}
+.ContentsBox2VisualIcon{
+	font-size: 12pt;
+	text-align: left;
+	color: #7E7E7E;
+	font-weight: bolder;
+	text-align: left;
+	width: 223px;
+	float: left;
+    clear: none;
+    margin: 0 0 20 0;
+}
+.ContentsBox2VisualIcon img{
+	width: 102px;
+    height:88px;
+    margin:0 0 20 60;
+}
+
+
+.ContainerMainContents2Visualcenter{
+	font-size: 26pt;
+	font-weight: bolder;
+	text-align: center;
+	margin: 20 10 0 10;
+	color: #35A8A6;
+	float: left;
+	width: 24px;
+}
+.ContentsBox2VisualNotice{
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: left;
+	color: #7E7E7E;
+	width: 1002px;
+	border: 1px;
+    border-style: dotted;
+    padding: 10 10 10 10;
+    margin: 0 0 30 0;
+	float: left;
+	clear: left;
+}
+
+
+/*footer*/
+.FooterBox{
+    margin:30 0 0 0;
+    background-color: #414141;
+	width: 100%; 
+    padding: 20 0 50 0;
+    float: left; clear: left; 
+	font-size: 9pt; font-weight: normal; color: #787878;
+}
+.FooterBoxBi{
+    width: 257px; height: 104px;
+	margin: 20 60 0 00;
+	float: left;
+}
+.FooterNavInfoBox {
+	width: 707px;
+    float: left;
+}
+.FooterBoxNav{
+	margin-top: 0px;
+	width: 707px;
+	text-align: center;
+	border-bottom: 1px dotted #717171;
+	padding: 30 0 30 0;
+}
+.FooterBoxNav span {
+	color: #787878;
+	padding: 0px 5px 0px 0px;
+	color: #B1B1B1;
+}
+.FooterBoxNav span a{
+	color: #B3B3B3;
+	text-decoration: none;
+}
+.FooterBoxNav span a:hover{
+	color: #62F109;
+	text-decoration: none;
+}
+.FooterBoxInfo{
+	width: 727px;
+	margin-top: 20px;
+	text-align: center;
+    float: left;
+    clear: left;
+}
+.FooterBoxInfo a{
+	color: #B3B3B3;
+	text-decoration: none;
+}
+.FooterBoxInfo a:hover{
+	color: #F30190;
+}
+
+
+.popupMain {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	}
+.popupMain .bg {
+	position:absolute; 
+	top:0; left:0; 
+	width:100%; 
+	height:100%; 
+	background:#000; 
+	opacity:.5; 
+	filter:alpha(opacity=50);
+	}
+
+.popupMain .pop-layer {
+	display:block;
+	}
+
+.pop-layer {
+	display:none; 
+	position: absolute; 
+	top: 50%; left: 50%; 
+	width: 592px; 
+	height:auto;  
+	background-color:#fff; 
+	border: 4px solid #3571B5; z-index: 10;
+	}	
+.pop-layer .pop-container {
+	background-color: #fff;
+	text-align:center;
+	margin-left:20px
+	width: 542px;
+	}
+.pop-layer p.ctxt {
+	color: #666; 
+	line-height: 25px;
+	}
+.pop-layer .btn-r {
+	width: 100%; 
+	margin:10px 0 20px; 
+	padding-top: 10px; 
+	border-top: 1px solid #DDD; 
+	text-align:right;
+	}
+.pop-layer p{
+	width:542px;
+	margin:0px;
+	float:left;
+	clear:left;
+	}
+.pop-layer h1{
+	color: #000000;
+	font-weight: normal;
+	font-size: 25pt;
+	float: left;
+	margin-top: 65px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	}
+.pop-layer h2{
+	color: #C7C7C7;
+	font-weight: normal;
+	font-size: 13pt;
+	float: left;
+	margin-top: 80px;
+	margin-left: 10px;
+	margin-right: 15px;
+	}
+.pop-container h3{
+	width: 70px;
+	margin-top: 20px;
+	margin-left: 50px;
+	float: left;
+	clear: left;
+	color: #828282;
+	font-size: 10pt;
+	}
+.pop-container input{
+	width: 270px;
+	height: 20pt;
+	margin-top: 15px;
+	color: #3C3C3C;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 9pt;
+	border: 1px solid #E4E4E4;
+	background-color: #F3F3F3;
+	padding-left: 10px;
+	padding-right: 10px;
+	clear: none;
+	float: left;
+	} 
+.big_button_black{
+	border: 1px solid #CECECE;
+	text-decoration: none;
+	color: #FFFFFF;
+	background-repeat: repeat-x;
+	height: 75px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	background-color: #000000;
+	width: 140px;
+	font-weight: bold;
+	font-size: 14pt;
+	float: left;
+	}
+.big_button_black:hover{
+    background-color: #747474;
+}
+.normal_button_gray{
+	border: 1px solid #CECECE;
+	text-decoration: none;
+	color: #FFFFFF;
+	height: 32px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	background-color: #C6C6C6;
+	width: 150px;
+	font-weight: bold;
+	font-size: 10pt;
+	}
+.normal_button_gray:hover{
+    background-color: #747474;
+}
+	a.cbtn {
+		align-self: auto; margin: 15px; float: right;}
+        
+.normal_button_black{
+	border: 1px solid #CECECE;
+	text-decoration: none;
+	color: #FFFFFF;
+	height: 32px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	background-color: #000;
+	width: 150px;
+	font-weight: bold;
+	font-size: 10pt;
+	}
+.normal_button_black:hover{
+    background-color: #747474;
+}
+	a.cbtn {
+		align-self: auto; margin: 15px; float: right;}
+
+
+

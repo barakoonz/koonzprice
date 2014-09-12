@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+
+.codeTopVis {
+	clear: left;
+	width: 1024px;
+	margin: 0 0 30 0;
+	height: 180px;
+	background-image: url(../img/codeBannerVis.png);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+
+}
+
+.CodeTopTitle1 {
+    font-size: 20pt;  font-weight: normal; color: #5c7272;
+    float: left; clear: left;
+    margin: 30 0 0 0;
+    
+}
+
+.CodeTopTitle2 {
+    font-size: 12pt;  font-weight: normal; color: #b9b9b9;
+    float: left; clear: left;
+    margin: 20 0 0 10;
+}
+
+
+
+.codechart_1 {
+    background-image: url(../img/chart_1.png);width: 112px; height: 300px;
+    float: left; clear: left;
+    font-size: 25pt; color: white;text-align: center; font-weight: bolder;
+    line-height: 112px;
+    text-shadow: 1px 1px 3px #000000;
+    background-repeat: no-repeat;    
+    
+}
+
+.codechart_2 {
+    background-image: url(../img/chart_2.png);
+    width: 112px;
+    height: 300px;
+    float: left; clear: left;
+    font-size: 25pt; color: white;text-align: center; font-weight: bolder;
+    line-height: 112px;
+    text-shadow: 1px 1px 3px #000000;
+    background-repeat: no-repeat;
+}
+
+.codechart_3 {
+    background-image: url(../img/chart_3.png);
+    width: 112px;
+    height: 300px;
+    float: left; clear: left;
+    font-size: 25pt; color: white;text-align: center; font-weight: bolder;
+    line-height: 112px;
+    text-shadow: 1px 1px 3px #000000;
+    background-repeat: no-repeat;
+}
+
+
+.codeBigBtn {
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.78);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.78);
+	width: 250px; height: 70px;
+	font-weight: bolder;color: #FFFFFF; font-style: normal; font-size: 14pt; line-height: 70px;	text-indent: 100px;
+	border-radius: 8px;
+	background-color: rgb(212, 15, 76);    
+	margin:200 20 0 0;	
+	background-image: url(../img/codebanner_icon.png);
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+    float: right;
+	border: 3px solid rgb(0, 0, 0);
+
+}
+.codeBigBtn:hover{
+	background-color: rgb(188, 17, 173);
+	border: 3px solid rgb(52, 49, 56);
+    text-decoration: none;
+}
+
+.codeBigBtn a{
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}

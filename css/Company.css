@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+
+
+.companyTopVis_koonzlogo {
+    width: 257px; height: 104px;
+    float: left; 
+    padding: 50 0 0 20;
+    
+}
+
+
+.ComapnyTopTitle1 {
+    font-size: 20pt; font-weight: normal; color: #5c7272;
+    float: left; clear: left;
+    margin: 30 0 0 0;
+    width: 400px;
+    
+}
+
+
+.ComapnyTopTitle2 {
+    font-size: 12pt;  font-weight: normal; color: #b9b9b9;
+    float: left; clear: left;
+    margin: 20 0 0 10;
+    width: 600px;
+}
+
+.companyTopViBg {clear: left;
+	width: 1024px;
+	margin: 0 0 0 0;
+	height: 320px;
+	background-image: url(../img/company_vis.png);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+    float: left; clear: left;
+    border-bottom: 1px;
+    border-bottom-color: #dedede;
+    border-bottom-style: solid;
+}
+
+.companyMap {
+    width: 1024px;      
+    text-align: center;
+    float: left; clear: left;
+    margin: 0 0 20 0;
+        border-bottom: 1px;
+    border-bottom-color: #dedede;
+    border-bottom-style: solid;
+    
+}
+
+.mapIcon {
+    width:150px;
+    float: left;
+    text-align: center;
+}
+.mapIcon img{
+    padding: 10  10  0  10;
+}
+
+.mapIcon p{
+    font-size: 12pt; font-weight: bold; color: gray;
+}
+.mapIcon a{
+    text-decoration: none;
+}
+.mapIcon p:hover{
+    color: red;
+}
+
+.mapIconBox {
+    margin:0 0 0 280;
+    float: left; 
+
+}
