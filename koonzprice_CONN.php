@@ -4,6 +4,7 @@
     $pwd = "8231c34b649555d";
     $db = "koonzpriceDB";
 
-$db_server = mysql_connect($host,$user,$pwd) or die ("error")
+    $db_server = mysql_connect($host,$user,$pwd) or die ("error");
+    mysql_select_db($db_server) or die ("error");
 
 ?>
