@@ -5,7 +5,7 @@
     $db = "koonzpriceDB";
 
     $db_server = mysql_connect($host,$user,$pwd) or die ("error1");
-    mysql_select_db($db_server) or die ("error2");
+    mysql_select_db($db) or die ("error2");
     mysql_close();
 
 ?>
