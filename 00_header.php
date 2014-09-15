@@ -14,20 +14,20 @@
                 </span>
                 <hr style="width: 492px; border: thin solid #F54E02; clear: left; margin-left: 50px;">            
             </p>
-	<form>
+	<form action = "login.php" method="post">
             <p><!--아이디 비밀 로그인-->
                 <div style="width:395px; float:left">
                 <h3>아이디</h3>
-                <input type="text">
+                <input type="text" name="id">
                 <h3>비밀번호</h3>
-                <input type="password" >
+                <input type="password" name="pw">
                 </div>
-                <button class="big_button_black">로그인</button>
+                <button class="big_button_black"  type="submit">로그인</button>
                 <!--회색줄-->
                 <hr style="width: 492px; border: thin dotted #D4D4D4; margin-left: 50px; float: left; clear: none;">
             </p>
-            <button class="normal_button_gray">아이디/비번찾기</button>
-            <button class="normal_button_gray">회원가입</button>
+            <button class="normal_button_gray" type="submit">아이디/비번찾기</button>
+            <button class="normal_button_gray" type="submit">회원가입</button>
 	</form>
 		</div>
 	</div>
@@ -126,19 +126,16 @@
                 <span class="NavBoxLeft_Default"><a href="<?=$PageName[5]?>.php">회사소개</a></span>
             </div>
             <div class="NavBoxRight">
-                <!--로그인후-->
-                <span class="loginSUC_name">강철수님!</span>
-                <span class="loginSUC_ment">반갑습니다~</span>
-
+                <!--로그인전-->
                 <span class="NavBoxRight_join">
-                    <a href="<?=$PageName[6]?>.php">회원정보수정</a>
+                    <a href="<?=$PageName[6]?>.php">회원가입</a>
                 </span>
                 <span class="NavBoxLeftCenter">|</span>
                 <span class="NavBoxRight_login">
-                    <a href="#">로그아웃</a>
+                    <a href="#" class="btn-example" onclick="layer_open('loginPopup');return false;">로그인</a>
                 </span>
                 <!--로그인전-->
-                
+                <!--로그인후-->
             </div>
         </div>
     </nav>
