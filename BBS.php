@@ -18,7 +18,12 @@
     </section>
     <section class="Box1024">
         <form>
-            <div class="BBS_add">
+            <div class="BBS_input_subject">
+                <span>제&nbsp;목</span>
+                <input type="text" placeholder="제목입력란입니다.">
+            </div>
+            <div class="BBS_input_textMate">
+                <span>내&nbsp;용</span>
                 <textarea placeholder="궁금하신 질문이나 마케팅 관련 공유할 이야기가 있으시면 남겨주세요..."></textarea>
             </div>
             <div class="BBS_add_button">
@@ -33,10 +38,10 @@
         <div class="BBS_icon_QN">
             <img src="img/bbs_Q.png">
         </div>
-        <div class="BBS_text">
-            <p class="BBS_text_id">id들어갈자리</p>
-            <p class="BBS_text_date">작성일 : 2014년 7월 14일</p>
-            <p class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
+        <div class="BBS_contents">
+            <span class="BBS_contents_subject">제목 들어갈 자리</span>
+            <span class="BBS_contents_mem_date">글쓴이 : bn051844 , 작성일 : 2014년 7월 14일</span>
+            <span class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
                 디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
                 일반디비에 절반수준에도 못 미치고 있습니다.
                 그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터
@@ -44,31 +49,30 @@
                 디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
                 일반디비에 절반수준에도 못 미치고 있습니다.
                 그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...
-            </p>
+            </span>
         </div>
         <div class="BBS_comment_box">
             <div class="BBS_icon_R">
                 <img src="img/bbs_R.png">
-            </div>
-            <span class="BBS_comment_id">id들어갈자리</span>
-            <span class="BBS_comment_date">작성일 : 2014년 7월 14일</span>
-            <p class="BBS_comment_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
+            </div>           
+            <span class="BBS_comment_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
                 디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
                 일반디비에 절반수준에도 못 미치고 있습니다.
                 그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터 PC용화면 전면레이어팝업
-            </p>
+            </span>
+             <span class="BBS_comment_date">작성일 : 2014년 7월 14일</span>
         </div>
     </section>
-    <!--게시글-->
+    <!--공지사항-->
     <section class="Box1024">
         <hr class="HR_gray100"></hr>
         <div class="BBS_icon_QN">
             <img src="img/bbs_N.png">
         </div>
-        <div class="BBS_text">
-            <p class="BBS_text_id">id들어갈자리</p>
-            <p class="BBS_text_date">작성일 : 2014년 7월 14일</p>
-            <p class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
+        <div class="BBS_contents">
+            <span class="BBS_contents_subject">공지사항 : 제목 들어갈 자리</span>
+            <span class="BBS_contents_mem_date">글쓴이 : 운영자 , 작성일 : 2014년 7월 14일</span>
+            <span class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
                 디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
                 일반디비에 절반수준에도 못 미치고 있습니다.
                 그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터
@@ -76,85 +80,10 @@
                 디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
                 일반디비에 절반수준에도 못 미치고 있습니다.
                 그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...
-            </p>
+            </span>
         </div>
-        <div class="BBS_comment_box">
-            <div class="BBS_icon_R">
-                <img src="img/bbs_R.png">
-            </div>
-            <span class="BBS_comment_id">id들어갈자리</span>
-            <span class="BBS_comment_date">작성일 : 2014년 7월 14일</span>
-            <p class="BBS_comment_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터 PC용화면 전면레이어팝업
-            </p>
-        </div>
-    </section>  
-    <!--게시글-->
-    <section class="Box1024">
-        <hr class="HR_gray100"></hr>
-        <div class="BBS_icon_QN">
-            <img src="img/bbs_Q.png">
-        </div>
-        <div class="BBS_text">
-            <p class="BBS_text_id">id들어갈자리</p>
-            <p class="BBS_text_date">작성일 : 2014년 7월 14일</p>
-            <p class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터
-                PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...
-            </p>
-        </div>
-        <div class="BBS_comment_box">
-            <div class="BBS_icon_R">
-                <img src="img/bbs_R.png">
-            </div>
-            <span class="BBS_comment_id">id들어갈자리</span>
-            <span class="BBS_comment_date">작성일 : 2014년 7월 14일</span>
-            <p class="BBS_comment_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터 PC용화면 전면레이어팝업
-            </p>
-        </div>
-    </section>
-    <!--게시글-->
-    <section class="Box1024">
-        <hr class="HR_gray100"></hr>
-        <div class="BBS_icon_QN">
-            <img src="img/bbs_N.png">
-        </div>
-        <div class="BBS_text">
-            <p class="BBS_text_id">id들어갈자리</p>
-            <p class="BBS_text_date">작성일 : 2014년 7월 14일</p>
-            <p class="BBS_text_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터
-                PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...
-            </p>
-        </div>
-        <div class="BBS_comment_box">
-            <div class="BBS_icon_R">
-                <img src="img/bbs_R.png">
-            </div>
-            <span class="BBS_comment_id">id들어갈자리</span>
-            <span class="BBS_comment_date">작성일 : 2014년 7월 14일</span>
-            <p class="BBS_comment_contents">6월중순부터 PC용화면 전면레이어팝업,후면레이어팝업에 보험료계산을 넣어서 
-                디비 유입이 많이 되고 있으나 체결율은팝업에 보험료계산을 넣어서 
-                일반디비에 절반수준에도 못 미치고 있습니다.
-                그래서 부득이하게 PC용 전팝업,후팝업 보험료계산디비는 70%만 인정합니다...6월중순부터 PC용화면 전면레이어팝업
-            </p>
-        </div>
-    </section>  
+
+    </section> 
 </article>
 
 

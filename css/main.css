@@ -40,14 +40,14 @@ body {
 .SubTitleBig{
 	color: black;
 	font-weight: normal;
-	font-size: 25pt;
+	font-size: 32px;
 	float: left;
     margin: 40 0 0 0;
 }
 .SubTitleSmall{
 	color: #C7C7C7;
 	font-weight: normal;
-	font-size: 13pt;
+	font-size: 18px;
 	float: left;
 	margin: 55 0 0 10;
 	font-style: normal;
@@ -145,7 +145,7 @@ body {
 .NavBoxLeft_me a{
 	text-decoration: none;
     color: #FF7200;
-    font-size: 16pt;
+    font-size: 20px;
 }
 .NavBoxLeft_me a:hover{
 	text-decoration: none;
@@ -154,11 +154,12 @@ body {
 .NavBoxLeft_Default{
 	color: white;
 	text-decoration: none;
-    font-size: 12pt;
+    font-size: 16px;
 }
 .NavBoxLeft_Default a{
 	text-decoration: none;
     color: #fff;
+    font-size: 16px;
 }
 .NavBoxLeft_Default a:hover{
 	text-decoration: none;
@@ -182,10 +183,10 @@ body {
 
 }
 .NavBoxRight_login {
-    font-size:11pt;font-weight: bold;
+    font-size:13px;font-weight: bold;
 }
 .NavBoxRight_join {
-    font-size:11pt;font-weight: bold;
+    font-size:13px;font-weight: bold;
     
 }
 
@@ -612,13 +613,13 @@ body {
 
 .loginSUC_name {
     color: #6dcff6;
-    font-size: 9pt; font-weight: bold;
+    font-size: 13px; font-weight: bold;
     
     
 }
 .loginSUC_ment {
     color: #f89e0e;
-    font-size: 8pt; font-weight: normal;
+    font-size: 11px; font-weight: normal;
     margin: 0 20 0 0;
     
 }

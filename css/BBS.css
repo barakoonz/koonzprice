@@ -1,13 +1,11 @@
 @charset "UTF-8";
 
-.BBS_add{
-    width: 1024px;
-    float: left; clear: left;
-    margin: 30 0 0 0;
-}
 
-.BBS_add textarea  {
-    width:1024px; height: 140px;
+
+
+
+.BBS_input_textMate textarea  {
+    width:964px; height: 140px;
 	color: #ABABAB;
 	font-size: 10pt;
     font-weight: normal;
@@ -33,41 +31,43 @@
     float: left; clear: left;
 }
 
-.BBS_text {
+.BBS_contents {
     width:884px;
     float: right;
     margin: 20 0 0 0;
 }
-.BBS_text_id {
+.BBS_contents_subject {
     width:884px;
     float: right;
-    color: #2a2a2a; font-size: 11pt; font-weight: bold;
+    color: #2a2a2a; font-size: 12pt; font-weight: bold;
+    margin: 10 0 10 0;
+    text-align: left;
 }
-.BBS_comment_id {
-    width:837px;float: right;
-    color: #3b8ba3; font-size: 10pt; font-weight: bold;
-    margin: 20 0 0 0;
-}
-.BBS_text_date {
+
+.BBS_contents_mem_date {
     width:884px;
     float: right;
-    color: #d0d0d0; font-size: 7pt; font-weight: normal;
+    color: #d0d0d0; font-size: 9pt; font-weight: normal;
+    margin: 10 0 0 0;
 }
 .BBS_comment_date {
     width:837px;
     float: right;
-    color: #d0d0d0; font-size: 8pt; font-weight: normal;
-    margin: 10 0 0 0;
+    color: #d0d0d0; font-size: 11px; font-weight: normal;
+    margin: 10 10 0 0;
+    text-align: right;
 }
 .BBS_text_contents {
     width:884px;
     float: right;
-    color: #9f9f9f; font-size: 11pt; font-weight: normal;
+    color: #9f9f9f; font-size: 10pt;
+    margin: 10 0 0 0;
 }
 .BBS_comment_contents {
     width:837px;
     float: right;
-    color: #9f9f9f; font-size: 9pt; font-weight: normal;
+    color: #9f9f9f; font-size: 12px; font-weight: normal;
+    margin: 15 0 0 0;
 }
 
 .BBS_comment_box {
@@ -77,4 +77,28 @@
     border-top: 1px;
     border-top-color: #dedede;
     border-top-style:dotted;
+    margin: 20 0 0 0;
+}
+
+.BBS_input_subject input {
+    width:964px;
+	color: #ABABAB;
+	font-size: 10pt;
+    font-weight: normal;
+	background-color: #FFFFFF;
+	border: 1px solid #E1E1E1;
+    padding: 10px;    
+    
+}
+
+
+.BBS_input_subject, .BBS_input_textMate {
+    float: left; clear: left;
+    margin: 10 0 0 0;
+}
+.BBS_input_subject span, .BBS_input_textMate span {
+    width: 40px;
+    float: left;
+    margin: 10 10 0 10;
+    font-size: 12pt; font-weight: bold; color: gray;
 }
