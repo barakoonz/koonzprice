@@ -11,23 +11,24 @@
     function subTitle(){
 
         $urlData = $_SERVER['PHP_SELF'];
-        $urlData=str_replace('/koonzprice/',"",$urlData);
-        $urlData=str_replace('.php',"",$urlData);
-        if ($urlData == "main"){ 
-            return  array("메인",$urlData,"yes");    
-        }elseif ($urlData == "MarketingAPP") {
+        
+
+
+        if (preg_match("/main/i", $urlData)){ 
+            return  array("메인",'main',"yes");    
+        }elseif (preg_match("/MarketingAPP/i", $urlData)) {
             return  array("마케팅앱","MarketingAPP","yes");    
-        }elseif ($urlData == "CodeBanner") {
-            return  array("코드/배너",$urlData,"no");    
-        }elseif ($urlData == "Money") {
-            return  array("수익금내역",$urlData,"no");    
-        }elseif ($urlData == "BBS") {
+        }elseif (preg_match("/CodeBanner/i", $urlData)) {
+            return  array("코드/배너","CodeBanner","no");    
+        }elseif (preg_match("/Money/i", $urlData)) {
+            return  array("수익금내역","Money","no");    
+        }elseif (preg_match("/main/i", $urlData)) {
             return  array("게시판",$urlData,"no");    
-        }elseif ($urlData == "Company") {
+        }elseif (preg_match("/main/i", $urlData)) {
             return  array("회사소개",$urlData,"yes");    
-        }elseif ($urlData == "Join") {
+        }elseif (preg_match("/main/i", $urlData)) {
             return  array("회원가입",$urlData,"yes");    
-        }elseif ($urlData == "FindMember") {
+        }elseif (preg_match("/main/i", $urlData)) {
             return  array("아이디/비번찾기",$urlData,"yes");    
         };
     };
