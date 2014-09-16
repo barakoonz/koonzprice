@@ -11,8 +11,6 @@
     function subTitle(){
 
         $urlData = $_SERVER['PHP_SELF'];
-        
-
 
         if (preg_match("/main/i", $urlData)){ 
             return  array("메인",'main',"yes");    
@@ -22,14 +20,14 @@
             return  array("코드/배너","CodeBanner","no");    
         }elseif (preg_match("/Money/i", $urlData)) {
             return  array("수익금내역","Money","no");    
-        }elseif (preg_match("/main/i", $urlData)) {
-            return  array("게시판",$urlData,"no");    
-        }elseif (preg_match("/main/i", $urlData)) {
-            return  array("회사소개",$urlData,"yes");    
-        }elseif (preg_match("/main/i", $urlData)) {
-            return  array("회원가입",$urlData,"yes");    
-        }elseif (preg_match("/main/i", $urlData)) {
-            return  array("아이디/비번찾기",$urlData,"yes");    
+        }elseif (preg_match("/BBS/i", $urlData)) {
+            return  array("게시판","BBS","no");    
+        }elseif (preg_match("/Company/i", $urlData)) {
+            return  array("회사소개","Company","yes");    
+        }elseif (preg_match("/Join/i", $urlData)) {
+            return  array("회원가입","Join","yes");    
+        }elseif (preg_match("/FindMember/i", $urlData)) {
+            return  array("아이디/비번찾기","FindMember","yes");    
         };
     };
  
