@@ -1,8 +1,8 @@
 
 <? 
-    if(htmlspecialchars($_POST['id']) and htmlspecialchars($_POST['pw'])){
+    if(htmlspecialchars($_POST['email']) and htmlspecialchars($_POST['pw'])){
         
-        $email = htmlspecialchars($_POST['id']);
+        $email = htmlspecialchars($_POST['email']);
         $pw = htmlspecialchars($_POST['pw']);
 
         include 'koonzprice_CONN.php';    

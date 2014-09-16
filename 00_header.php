@@ -1,10 +1,6 @@
 <?
     session_start();
 
-
-
-
-
     function PageName(){
         return ['main','MarketingAPP','CodeBanner','Money','BBS','Company','Join','FindMember'];
     }
@@ -56,15 +52,17 @@
                 </span>
                 <hr style="width: 492px; border: thin solid #F54E02; clear: left; margin-left: 50px;">            
             </p>
-	<form action = "auth.php" method="post">
+    
+    
+        <form name="loginForm" method="post"  > 
             <p><!--아이디 비밀 로그인-->
                 <div style="width:395px; float:left">
                 <h3>아이디</h3>
-                <input type="text" name="id">
+                <input type="text" name="email" id="email">
                 <h3>비밀번호</h3>
-                <input type="password" name="pw">
+                <input type="password" name="pw" id="pw">
                 </div>
-                <button class="big_button_black"  type="submit">로그인</button>
+                <button class="big_button_black"  type="submit" onclick="btnSubmit()">로그인</button>
                 <!--회색줄-->
                 <hr style="width: 492px; border: thin dotted #D4D4D4; margin-left: 50px; float: left; clear: none;">
             </p>
@@ -118,7 +116,60 @@
     <title>KoonzPrice.com All CPA,CPS,CPC,CPM Marketing의 모든것</title>
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 	<link href="css/main.css" rel="stylesheet" type="text/css">
-    <? if($subTitle[1]){ echo "<link href='css/" , $subTitle[1],  ".css' rel='stylesheet' type='text/css'>";}; ?>    
+
+<? 
+    if($subTitle[1]){ 
+        echo "<link href='css/" , $subTitle[1],  ".css' rel='stylesheet' type='text/css'>";
+    }; 
+?>    
+
+<!--로그인체크 자바스크립트-->
+    <script type="text/javascript">
+
+
+    function chkEmail(str)
+     {
+        var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+        if(!reg_email.test(str)){
+            return false;
+        }
+        return true;
+    }
+     
+     // 폼 전송
+     function btnSubmit()
+     {
+        $('#email').val($('#email').val().trim()); 
+        if(!chkEmail($('#email').val()))
+        {
+            alert('이메일을 확인하세요.');
+            $('#email').focus();
+            layer_open("loginPopup")
+            return;
+        }
+
+        var form = document.loginForm;
+        if (form.email.value == "")
+        {
+            alert("이메일 아이디를 입력해야 합니다!");
+            form.email.focus();
+            layer_open("loginPopup")
+            return;
+        }
+        if (form.pw.value == "")
+        {
+            alert("비밀번호를 입력해야 합니다!");
+            form.email.focus();
+            layer_open("loginPopup")
+            return;
+        }
+        form.action = "auth.php"; 
+
+      
+
+     }
+     </script>
+<!--로그인체크 자바스크립트 -->
 
 </head>
 <body>
