@@ -10,11 +10,11 @@
                 <span>|</span>
                 <span><a href="<?=$PageName[1]?>.php">마케팅앱</a></span>
                 <span>|</span>
-                <span><a href="<?=$PageName[2]?>.php">코드/배너</a></span>
+                <span><?pageCHKsession($PageName[2])?>코드/배너</a></span>
                 <span>|</span>
-                <span><a href="<?=$PageName[3]?>.php">수익금내역</a></span>
+                <span><?pageCHKsession($PageName[3])?>수익금내역</a></span>
                 <span>|</span>
-                <span><a href="<?=$PageName[4]?>.php">게시판</a></span>
+                <span><?pageCHKsession($PageName[4])?>게시판</a></span>
                 <span>|</span>
                 <span><a href="<?=$PageName[5]?>.php">회사소개</a></span>
                 <span>|</span>
