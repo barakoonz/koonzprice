@@ -1,4 +1,47 @@
 <?
+    session_start();
+
+
+
+
+
+    function PageName(){
+        return ['main','MarketingAPP','CodeBanner','Money','BBS','Company','Join','FindMember'];
+    }
+    function subTitle(){
+
+        $urlData = $_SERVER['PHP_SELF'];
+        $urlData=str_replace('/koonzprice/',"",$urlData);
+        $urlData=str_replace('.php',"",$urlData);
+        if ($urlData == "main"){ 
+            return  array("메인",$urlData,"yes");    
+        }elseif ($urlData == "MarketingAPP") {
+            return  array("마케팅앱","MarketingAPP","yes");    
+        }elseif ($urlData == "CodeBanner") {
+            return  array("코드/배너",$urlData,"no");    
+        }elseif ($urlData == "Money") {
+            return  array("수익금내역",$urlData,"no");    
+        }elseif ($urlData == "BBS") {
+            return  array("게시판",$urlData,"no");    
+        }elseif ($urlData == "Company") {
+            return  array("회사소개",$urlData,"yes");    
+        }elseif ($urlData == "Join") {
+            return  array("회원가입",$urlData,"yes");    
+        }elseif ($urlData == "FindMember") {
+            return  array("아이디/비번찾기",$urlData,"yes");    
+        };
+    };
+ 
+    $PageName = PageName();
+    $subTitle = subTitle();
+
+    if(!$_SESSION["email"]){
+        if($subTitle[1]=="BBS" or $subTitle[1]=="CodeBanner" or $subTitle[1]=="Money" ){
+            echo '<script>alert("로그인이 필요한 서비스 입니다. 로그인후 사용하여 주시기 바랍니다.");location.replace("index.html")</script>';
+
+        };
+    };
+
 	$loginpoup = '
 <!--로그인 팝업부-->
 	<div class="popupMain" >
@@ -14,7 +57,7 @@
                 </span>
                 <hr style="width: 492px; border: thin solid #F54E02; clear: left; margin-left: 50px;">            
             </p>
-	<form action = "login.php" method="post">
+	<form action = "auth.php" method="post">
             <p><!--아이디 비밀 로그인-->
                 <div style="width:395px; float:left">
                 <h3>아이디</h3>
@@ -67,28 +110,8 @@
 	}				
 </script>
 	';
-
-
-    $NowPageName = $_SERVER['PHP_SELF'];
-    $PageName = ['main','MarketingAPP','CodeBanner','Money','BBS','Company','Join','FindMember'];
-    if (preg_match("/main/i", $NowPageName)) {
-      $subTitle[0] = "메인"; $subTitle[1] = $PageName[0]; $jsload = "yes";
-    }else if (preg_match("/app/i", $NowPageName)) { 
-      $subTitle[0] = "마케팅앱"; $subTitle[1] = $PageName[1]; $jsload = "yes";
-    }else if(preg_match("/code/i", $NowPageName)) { 
-      $subTitle[0] = "코드배너"; $subTitle[1] = $PageName[2];
-    }else if(preg_match("/money/i", $NowPageName)) { 
-      $subTitle[0] = "수익금내역"; $subTitle[1] = $PageName[3];
-    }else if(preg_match("/bbs/i", $NowPageName)) { 
-      $subTitle[0] = "게시판"; $subTitle[1] = $PageName[4];
-    }else if(preg_match("/company/i", $NowPageName)) {
-      $subTitle[0] = "회사소개"; $subTitle[1] = $PageName[5]; $jsload = "yes";
-    }else if(preg_match("/join/i", $NowPageName)) { 
-      $subTitle[0] = "회원가입"; $subTitle[1] = $PageName[6]; $jsload = "yes";
-    }else if(preg_match("/findmem/i", $NowPageName)) { 
-      $subTitle[0] = "아이디/비번찾기"; $subTitle[1] = $PageName[7]; $jsload = "yes";
-    };
 ?>
+
 <!--헤더부분-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -104,7 +127,7 @@
     <!--bi와 우측 연락처정보 부분-->
     <div class="HeaderTop">
         <div class="HeaderTopBI" >
-            <a href="main.php"><img src="img/header_h1_bi.png" width="371" height="65"/></a>
+            <a href="index.html"><img src="img/header_h1_bi.png" width="371" height="65"/></a>
         </div>
         <div class="HeaderTopCallmeBox">
             <div class="HeaderCallmeTelEmailBox">
@@ -115,32 +138,65 @@
         </div>
     </div>
     <!--메뉴부분 -->
+
+                
+<?
+    function pageCHKsession($data){
+        if($_SESSION["email"]){
+            echo '<a href="'.$data.'.php">';
+        }elseif(!$_SESSION["email"]){
+            echo '<a href="#" class="btn-example" onclick=layer_open("loginPopup");return false;>';
+        };  
+    }
+?>
+
     <nav class="topNav">
         <div class="Box1024">
             <div class="NavBoxLeft">
                 <span class="NavBoxLeft_me"><a href="<?=$PageName[0]?>.php">Home</a></span>
                 <span class="NavBoxLeft_Default"><a href="<?=$PageName[1]?>.php">마케팅앱</a></span>
-                <span class="NavBoxLeft_Default"><a href="<?=$PageName[2]?>.php">코드배너</a></span>
-                <span class="NavBoxLeft_Default"><a href="<?=$PageName[3]?>.php">수익금내역</a></span>
-                <span class="NavBoxLeft_Default"><a href="<?=$PageName[4]?>.php">게시판</a></span>
+                <span class="NavBoxLeft_Default"><?pageCHKsession($PageName[2])?>코드배너</a></span>
+                <span class="NavBoxLeft_Default"><?pageCHKsession($PageName[3])?>수익금내역</a></span>
+                <span class="NavBoxLeft_Default"><?pageCHKsession($PageName[4])?>게시판</a></span>
                 <span class="NavBoxLeft_Default"><a href="<?=$PageName[5]?>.php">회사소개</a></span>
             </div>
             <div class="NavBoxRight">
-                <!--로그인전-->
+
+<?
+    if($_SESSION["email"]){
+        echo'<!--로그인후-->
+                <span class="loginSUC_name">'.$_SESSION["name"].'!</span>
+                <span class="loginSUC_ment">님 반갑습니다~</span>
+
                 <span class="NavBoxRight_join">
-                    <a href="<?=$PageName[6]?>.php">회원가입</a>
+                    <a href="'.$PageName[6].'.php">회원정보수정</a>
                 </span>
                 <span class="NavBoxLeftCenter">|</span>
                 <span class="NavBoxRight_login">
-                    <a href="#" class="btn-example" onclick="layer_open('loginPopup');return false;">로그인</a>
+                    <a href="auth.php">로그아웃</a>
                 </span>
-                <!--로그인전-->
-                <!--로그인후-->
+                <!--로그인전-->';
+
+    }else{
+        echo '<!--로그인전-->
+                <span class="NavBoxRight_join">
+                    <a href="'.$PageName[6].'.php">회원가입</a>
+                </span>
+                <span class="NavBoxLeftCenter">|</span>
+                <span class="NavBoxRight_login">
+                    <a href="#" class="btn-example" onclick=layer_open("loginPopup");return false;>로그인</a>
+                </span>
+                <!--로그인전-->';
+    };
+?>
+
+
+                
             </div>
         </div>
     </nav>
 </header>
-<? if ($jsload == "yes"){
+<? if ($subTitle[2] == "yes"){
 	echo $loginpoup;
 	}
 ?>
