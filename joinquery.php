@@ -15,5 +15,6 @@ echo '이용약관동의 : '.htmlspecialchars($_POST['agreeMEM']);
 echo "<br>";
 echo "개인정보보호정책동의 : ".htmlspecialchars($_POST['privacy']);
 echo "<br>";
-echo "현재시간 : ".date("Y-m-d H:i:s");
+date_default_timezone_set("Asia/Seoul");
+echo "한국시간 : ".date("Y-m-d H:i:s");
 ?><br>
