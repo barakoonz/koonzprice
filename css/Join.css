@@ -34,6 +34,27 @@
 	font-size: 10pt;
 	float: left;
 }
+.span_join_gray{
+	border: 1px solid #CECECE;
+	color: #FFFFFF;
+	height: 40px;
+	margin: 22 10 0 1;
+    padding: 12 0 0 0;
+	background-color: #C6C6C6;
+	width: 150px;
+	font-weight: bold;
+	font-size: 10pt;
+	float: left;
+    height: 28px;
+    text-align: center;
+}
+.span_join_gray a{
+    text-decoration: none;
+}
+.span_join_gray:hover{
+    background-color: gray;
+
+}
 .Button_join_gray:hover{
 	background-color: #767676;
 }

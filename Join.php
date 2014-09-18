@@ -1,8 +1,40 @@
 
 <? include '00_header.php'; ?>
 
-<!--회원가입부분 script-->
+<!--아이디중복 script-->
+<script type="text/javascript">
+    function idchk() {
+        var email = document.mem.elements['email'];
+        if(!email.value){
+          alert("email 없어요!");
+          return false;
+        };
+        if(!chk2(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i, email, "이메일 형식에 어긋납니다."))
+          return false;   
 
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert(xmlhttp.responseText);
+            }
+        }
+
+        xmlhttp.open("POST", "join_chk.php", true);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send("email=" + email.value);
+    }
+    function chk2(re, e, msg) {
+      if (re.test(e.value)) {
+        return true;
+      }
+      alert(msg);
+      e.value = "";
+      e.focus();
+      return false;
+}
+</script>
+<!--회원가입부분 script-->
 <script type="text/javascript">
 
     function validate(){
@@ -111,7 +143,7 @@
         <!--아이디입력-->
         <span class="join_data_name">아이디</span>
         <input type="text" name="email" id="email" class= "Input_join_Default"/><br />
-        <button class="Button_join_gray" type="submit">아이디 중복확인</button>
+        <a href="#" onClick="javascript:idchk()"><span class="span_join_gray" type="submit">아이디 중복확인</span></a>
         <span class="inputNotice">* 아이디는 수신가능한 이메일로 입력 하셔야 합니다.</span>
         <div class="idcomment">
             <span>이메일로 정보수신을 동의 하시겠습니까?</span>
