@@ -13,6 +13,7 @@ echo '메일수신여부 : '. htmlspecialchars($_POST['mailCHK']);
 echo "<br>";
 echo '이용약관동의 : '.htmlspecialchars($_POST['agreeMEM']);
 echo "<br>";
-echo "개인정보보호정책동의 : ".htmlspecialchars($_POST['privacy']);<br>
+echo "개인정보보호정책동의 : ".htmlspecialchars($_POST['privacy']);
+echo "<br>";
 echo "현재시간 : ".date("Y-m-d H:i:s");
-?>
+?><br>
