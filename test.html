@@ -1,0 +1,255 @@
+<script language="javascript">
+   <!--
+   function checkInput (form) {
+    
+      
+      if (!form.id.value) {
+         alert("아이디(ID)를 입력하세요!");
+         form.id.focus(); 
+         return;
+      }
+      if(!IsID(form.id.name)) {
+         alert("아이디는 4 ~ 15자의 영문 소문자나 숫자 또는 조합된 문자열이어야 합니다!");
+         form.id.focus();
+         form.id.select();
+         return;         
+      }            
+      
+      if (!form.passwd.value) {
+         alert("비밀번호를 입력하세요!");
+         form.passwd.focus();
+         return;
+      }
+      if(!IsPW(form.passwd.name)) {
+         alert("비밀번호는 4 ~ 8자의 영문자나 숫자 또는 조합된 문자열이어야 합니다!");
+         form.passwd.focus();
+         form.passwd.select();
+         return;
+      }    
+      if (form.passwd.value != form.repasswd.value) {
+         alert("입력하신 비밀번호가 일치하지 않습니다.\n다시 확인하시고 입력하여 주십시오.");
+         form.repasswd.focus();
+         form.repasswd.select();
+         return;
+      }
+    
+   if (!form.name.value) {
+         alert("이름을 입력해 주세요.");
+         form.name.focus();
+         return;
+      }
+
+   if (!form.email.value) {
+         alert("전자우편주소를 입력해주세요!");
+         form.email.focus();
+         return;
+      }
+
+
+     if (!form.cp1.value) {
+         alert("연락처를 입력하세요!");
+         form.cp1.focus();  
+         return;
+      }
+
+          
+                      
+      
+
+                  
+      form.submit();
+   }
+   
+   function IsID(formname) {
+      var form = eval("document.signform." + formname);
+      
+      if(form.value.length < 4 || form.value.length > 25) {
+         return false;
+      }
+      for(var i = 0; i < form.value.length; i++) {
+         var chr = form.value.substr(i,1);         
+         if((chr < '0' || chr > '9') && (chr < 'a' || chr > 'z')) {
+            return false;
+         }
+      }
+      return true;   
+   }
+
+   function IsPW(formname) {
+      var form = eval("document.signform." + formname);
+      
+      if(form.value.length < 4 || form.value.length > 22) {
+         return false;
+      }
+      for(var i = 0; i < form.value.length; i++) {
+         var chr = form.value.substr(i,1);         
+         if((chr < '0' || chr > '9') && (chr < 'a' || chr > 'z') && (chr < 'A' || chr > 'Z')) {
+            return false;
+         }
+      }
+      return true;   
+   }
+         
+   function IsNumber(formname) {
+      var form = eval("document.signform." + formname);
+
+      for(var i = 0; i < form.value.length; i++) {
+         var chr = form.value.substr(i,1);
+         if(chr < '0' || chr > '14') {            
+            return false;
+         }
+      }
+      return true;   
+   }
+
+     function IsEmail(formname) {
+      var form = eval("document.signform." + formname);
+
+      if(form.value != /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/){
+        alert('이메잃형식틀림');
+
+      }
+
+   }
+
+
+   function check_ID_Window(ref) {
+      var id = eval(document.signform.id);
+            
+      if(!id.value) {
+         alert('아이디(ID)를 입력하신 후에 확인하세요!');
+         id.focus();
+         return;
+      } else {
+         ref = ref + "?id=" + id.value;
+         var window_left = (screen.width-640)/2;
+         var window_top = (screen.height-480)/2;
+         window.open(ref,"checkIDWin",'width=250,height=160,status=no,top=' + window_top + ',left=' + window_left + ''); 
+      }
+   }
+   //-->
+   </script>
+
+<script type="text/javascript">
+// <![CDATA[
+jQuery( function($) {
+
+  var input_email = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
+  var input_pw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 검사식  
+  var input_repw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 검사식  
+  var input_tel = /^[0-9]{8,11}$/; // 전화번호 검사식
+  var input_koname = /^[가-힝]{2,15}$/;// 한글이름 검사식
+  var 
+    form = $('.form'), 
+    pw = $('#pw'), 
+    repw = $('#repw'), 
+    email = $('#email'), 
+    tel = $('#tel');
+    koname = $('#koname');
+    mailagree = $('#mailagree');
+
+    
+
+  form2.submit( function() {
+
+
+    var agreechk = getCheckedRadioId('mailagree');
+
+    function getCheckedRadioId(name) {
+    var elements = document.getElementsByName(name);
+
+    for (var i=0, len=elements.length; i<len; ++i)
+        if (elements[i].checked) return elements[i].value;
+    }
+    window.alert(agreechk);
+    if(input_email.test(email.val()) != true) { // 이메일 검사
+      alert('[Eemail 입력 오류] 아이디는 이메일 주소입니다. 정확한 주소를 입력하여주세요');
+      email.focus();
+      return false;
+    }else if(input_koname.test(koname.val()) != true) { // 비밀번호 검사
+      alert('[이름 입력오류] 한글이름을 입력하여 주세.');
+      pw.focus();
+      return false;
+    }else if(input_repw.test(repw.val()) != true) { // 비밀번호 검사
+      alert('[PW 입력 오류] 유효한 PW를 입력해 주세요.');
+      pw.focus();
+      return false;
+    }else if(input_pw.test(pw.val()) != true) { // 비밀번호 검사
+      alert('[PW 입력 오류] 유효한 PW를 입력해 주세요.');
+      pw.focus();
+      return false;
+    }else if(pw.val() != repw.val() ) { // 비밀번호 검사
+      alert('[PW 입력 오류] 같은pW를 입력해요.');
+      pw.focus();
+      return false;
+    }else if(input_tel.test(tel.val()) != true) { // 전화번호 검사
+      alert('[Tel 입력 오류] 유효한 전화번호를 입력해 주세요.');
+      tel.focus();
+      return false;
+    }else if(var agreechk < 1) { // 비밀번호 검사
+      window.alert('이메일정보수신 체크를 하셔야만 가입이 가능합니다.');
+      pw.focus();
+      return false;
+    }
+  });
+
+  $('#pw').after('<strong></strong>');
+
+  pw.keyup( function() {
+    var s = $(this).next('strong'); 
+    if (pw.val().length == 0) { 
+      s.text(''); 
+    }else if (pw.val().length < 6) { 
+      s.text('비밀번호는 최소 6자이상, 최대20자 로 해주시기 바랍니다.'); 
+    }else if (pw.val().length > 18) { 
+      s.text('비밀번호는 최소 6자이상, 최대20자 로 해주시기 바랍니다.'); 
+    }else { }
+  });
+  
+
+  tel.keydown( function() {
+    if(event.keyCode==109 || event.keyCode==189) {
+      return false;
+    };
+  });
+
+});
+
+</script>
+
+
+
+
+<form name="signform" action="mem.php" method='post'>
+
+   <label >이름</label>
+   <input id="koname"  name="koname"/>
+<br>   
+
+<label >Eemail(*):</label>
+   <input id="email"  name="email"/>
+<br>
+
+   <label >PW(*):</label>
+   <input id="pw" type="password" name="pw"/>
+   영문, 숫자, 언더스코어(_), 하이픈(-)이 포함된 6~18 문자.
+<br>
+   <label >PW(*):</label>
+   <input id="repw" type="password" />
+   위의비밀번호랑 동일한지 체크듬
+<br>
+
+
+   <label >Tel(*):</label>
+   <input id="tel" name="tel" />
+   하이픈(-)은 입력하지 마세요.
+<br>
+
+ 
+            <input type="radio" name="mailagree" id ="mailagree" value="1" checked>
+            <span>예</span>
+            <input type="radio" name="mailagree" id ="mailagree" value="2">
+
+            <span>아니요</span>
+            <input type="submit" value="전송" />
+</form>
