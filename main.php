@@ -9,7 +9,7 @@
         <h3>극대화된 수익을 창출하세요!!</h3>
         <h4>KOONZprice와 함께라면<br>
         모든것이 가능해집니다.</h4>
-        <div class="mainMemJoin"><a href="join.php">&gt; 회원가입</a></div>
+        <div class="mainMemJoin"><a href="Join.php">&gt; 회원가입</a></div>
     </section>
 
 
