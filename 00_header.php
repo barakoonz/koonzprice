@@ -1,8 +1,11 @@
 <?
     session_start();
+    if(!$_SESSION[frameCHK]){
+        echo "<script>location.replace('index.html')</script>";
+    }
 
     function PageName(){
-        return ['main','MarketingAPP','CodeBanner','Money','BBS','Company','Join','FindMember'];
+        return ['main','MarketingAPP','CodeBanner','Money','BBS','Company','Join','FindMember','MyAccountEdit'];
     }
     function subTitle(){
 
@@ -24,6 +27,8 @@
             return  array("회원가입","Join","yes");    
         }elseif (preg_match("/FindMember/i", $urlData)) {
             return  array("아이디/비번찾기","FindMember","yes");    
+        }elseif (preg_match("/MyAccountEdit/i", $urlData)) {
+            return  array("회원정보수정","MyAccountEdit","no");    
         };
     };
  
@@ -31,7 +36,7 @@
     $subTitle = subTitle();
 
     if(!$_SESSION["email"]){
-        if($subTitle[1]=="BBS" or $subTitle[1]=="CodeBanner" or $subTitle[1]=="Money" ){
+        if($subTitle[1]=="BBS" or $subTitle[1]=="CodeBanner" or $subTitle[1]=="Money" or $subTitle[1]=="MyAccountEdit"){
             echo '<script>alert("로그인이 필요한 서비스 입니다. 로그인후 사용하여 주시기 바랍니다.");location.replace("index.html")</script>';
 
         };
@@ -54,21 +59,23 @@
             </p>
     
     
-        <form name="loginForm" method="post"  > 
+       
             <p><!--아이디 비밀 로그인-->
                 <div style="width:395px; float:left">
+                 <form name="loginForm" method="post"  > 
                 <h3>아이디</h3>
                 <input type="text" name="email" id="email">
                 <h3>비밀번호</h3>
                 <input type="password" name="pw" id="pw">
                 </div>
                 <button class="big_button_black"  type="submit" onclick="btnSubmit()">로그인</button>
+                </form>
                 <!--회색줄-->
-                <hr style="width: 492px; border: thin dotted #D4D4D4; margin-left: 50px; float: left; clear: none;">
+                <hr class="HR_grayDot">
             </p>
-            <button class="normal_button_gray" type="submit">아이디/비번찾기</button>
-            <button class="normal_button_gray" type="submit">회원가입</button>
-	</form>
+            <button class="normal_button_gray" onclick="javascript:location.href=\'FindMember.php\'">아이디/비번찾기</button>
+            <button class="normal_button_gray" onclick="javascript:location.href=\'Join.php\'">회원가입</button>
+	
 		</div>
 	</div>
 </div> 
@@ -219,7 +226,7 @@
                 <span class="loginSUC_ment">님 반갑습니다~</span>
 
                 <span class="NavBoxRight_join">
-                    <a href="'.$PageName[6].'.php">회원정보수정</a>
+                    <a href="'.$PageName[8].'.php">회원정보수정</a>
                 </span>
                 <span class="NavBoxLeftCenter">|</span>
                 <span class="NavBoxRight_login">

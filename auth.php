@@ -26,6 +26,7 @@
                     session_start();
                     $_SESSION["email"]=$row['email'];
                     $_SESSION["name"]=$row['name'];
+                    $_SESSION["pw"]=$row['pw'];
                     mysql_close();
                     echo "<script>window.alert('".$_SESSION["name"]."님 반갑습니다. 오늘도 대박나는 하루보내세요!!~~');location.replace('index.html')</script>";
                     exit;
