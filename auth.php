@@ -6,13 +6,12 @@
         $pw = htmlspecialchars($_POST['pw']);
 
         include 'koonzprice_CONN.php';    
-        $mysql = mysql_connect($azure_domain, $azure_id, $azure_pw) or die(mysql_error());
+        
         if(!$mysql){
             echo("<script>window.alert('정상적인 접근이 아닙니다.');location.replace('index.html');</script>");
             exit;
         }else{
-            $mysql = mysql_select_db($azure_db);
-            if(!$mysql){
+            if(!$db){
                 echo("<script>window.alert('서비스가 정상적이지 못합니다. 잠시후에 접속하시기 바랍니다.');location.replace('index.html');</script>");
                 exit;
             }else{

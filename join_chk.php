@@ -1,4 +1,6 @@
-<?php
+<?
+$Ajax_return="none";
+
 if ($_POST['email']) {
 
 
@@ -11,11 +13,12 @@ if ($_POST['email']) {
   $row = mysql_fetch_array( $result );
 
 
-  if($row[0] > 0){
-    echo $email."은 사용이 불가능합니다.";
+  if($row[0] == 0){
+    $Ajax_return=1;
   }else{
-    echo $email."은 사용이 가능합니다.";
+   $Ajax_return=0;
   };
+  echo $Ajax_return;
   mysql_close();
 };
 ?> 

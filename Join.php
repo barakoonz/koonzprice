@@ -16,7 +16,18 @@
 
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                alert(xmlhttp.responseText);
+              emailCHKvalue = xmlhttp.responseText;
+
+              if(xmlhttp.responseText == 1){
+                alert('사용이 가능한 아이디 입니다.');
+                document.getElementById('emailCHKvalue').value = xmlhttp.responseText;
+                return true;
+              }else if(xmlhttp.responseText == 0){ 
+                alert('사용이 불가능한 아이디 입니다.\n다른아이디를 입력하여주세요.');
+                return false;
+              }
+              
+
             }
         }
 
@@ -33,9 +44,9 @@
       e.focus();
       return false;
 }
-</script>
+
 <!--회원가입부분 script-->
-<script type="text/javascript">
+
 
     function validate(){
 
@@ -53,64 +64,68 @@
         return false;
       };
 
+      var CHKvalue = document.getElementById('emailCHKvalue');
+      if(!CHKvalue.value){
+        alert("아이디 중복체크를 먼저 해주시기 바랍니다.");
+        return false;
+      }else{
+        var pw = document.mem.elements['pw'];
+        if(!pw.value){
+          alert("비밀번호 가없어요!");
+          return false;
+        }
+        if(pw.value.length < 4){
+          alert("4자이상의 비밀번호입력")
+          return false;
+        }
 
-      var pw = document.mem.elements['pw'];
-            if(!pw.value){
-        alert("비밀번호 가없어요!");
-        return false;
-      }
-      if(pw.value.length < 4){
-        alert("4자이상의 비밀번호입력")
-        return false;
-      }
+        var pw1 = document.mem.elements['pw1'];
+        if(!pw1.value){
+          alert("비밀번호2 가없어요!");
+          return false;
+        }
+        if(pw1.value.length < 4){
+          alert("4자이상의 비밀번호입력")
+          return false;
+        }
 
-      var pw1 = document.mem.elements['pw1'];
-      if(!pw1.value){
-        alert("비밀번호2 가없어요!");
-        return false;
-      }
-      if(pw1.value.length < 4){
-        alert("4자이상의 비밀번호입력")
-        return false;
-      }
+        if(pw.value != pw1.value) {
+          alert("비밀번호 같지않아  확인!");
+          return false;
+        }
+        var name = document.mem.elements['name'];
+        if(!name.value){
+          alert("이름 가없어요!");
+          return false;
+        }
+        if(name.value.length < 2){
+          alert("정확한 이름을 한글로 입력하여주세요");
+          return false;
+        }
+        if(!chk(/^[가-힝]{2,15}$/, name, "정확한 이름을 한글로 입력하여주세요~"))
+               return false;
 
-      if(pw.value != pw1.value) {
-        alert("비밀번호 같지않아  확인!");
-        return false;
-      }
+        var telephone = document.mem.elements['telephone'];
+        if(!telephone.value){ 
+          alert("telephone 가없어요!");
+          return false;
+        }
+        if(!chk(/^[0-9]{8,14}$/, telephone, "telephone 형식에 어긋납니다."))
+          return false;
 
+        var agreeMEM = document.mem.elements['agreeMEM'].checked;
+        if (agreeMEM == false){
+          alert('이용약관에 동의하셔야만 회원가입이 가능합니다.');
+          return false;
+        };
 
-      var name = document.mem.elements['name'];
-      if(!name.value){
-        alert("이름 가없어요!");
-        return false;
-      }
-      if(name.value.length < 2){
-        alert("정확한 이름을 한글로 입력하여주세요");
-        return false;
-      }
-      if(!chk(/^[가-힝]{2,15}$/, name, "정확한 이름을 한글로 입력하여주세요~"))
-             return false;
-
-      var telephone = document.mem.elements['telephone'];
-      if(!telephone.value){ 
-        alert("telephone 가없어요!");
-        return false;
-      }
-      if(!chk(/^[0-9]{8,14}$/, telephone, "telephone 형식에 어긋납니다."))
-        return false;
-
-      var agreeMEM = document.mem.elements['agreeMEM'].checked;
-      if (agreeMEM == false){
-        alert('이용약관에 동의하셔야만 회원가입이 가능합니다.');
-        return false;
+        var privacy = document.mem.elements['privacy'].checked;
+        if (privacy == false){
+          alert('개인정보 보호정책에 동의하셔야만 회원가입이 가능합니다.');
+          return false;
+        };
       };
 
-      var privacy = document.mem.elements['privacy'].checked;
-      if (privacy == false){
-        alert('개인정보 보호정책에 동의하셔야만 회원가입이 가능합니다.');
-        return false;
-      };
 
     }
     function chk(re, e, msg) {
@@ -145,6 +160,7 @@
         <input type="text" name="email" id="email" class= "Input_join_Default"/><br />
         <a href="#" onClick="javascript:idchk()"><span class="span_join_gray" type="submit">아이디 중복확인</span></a>
         <span class="inputNotice">* 아이디는 수신가능한 이메일로 입력 하셔야 합니다.</span>
+        <input type="hidden" id="emailCHKvalue" name="emailCHKvalue" >
         <div class="idcomment">
             <span>이메일로 정보수신을 동의 하시겠습니까?</span>
             <input name="mailCHK" type="checkbox"  value="yes" class = "checkbox" checked>
