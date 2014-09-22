@@ -1,0 +1,154 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+
+function idCHK(){
+
+	var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          emailCHKvalue = xmlhttp.responseText;
+
+          if(xmlhttp.responseText > 0){
+            alert('사용이 가능한 아이디 입니다.');
+            document.getElementById('f_idCHK').value = document.getElementById('f_emailID').value;
+            return true;
+          }else if(xmlhttp.responseText <= 0){ 
+            alert('사용이 불가능한 아이디 입니다.\n다른아이디를 입력하여주세요.');
+            document.mem.elements['f_emailID'].value = "";
+            return false;
+          }
+          
+
+        }
+    }
+
+    xmlhttp.open("POST", "join_chk.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send("email=" + document.mem.elements['f_emailID'].value);
+
+}
+
+
+
+jQuery( function($) {
+
+	var re_id = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
+	var re_pw1 = /^[a-z0-9_-]{4,20}$/; // 비밀번호 검사식
+	var re_pw2 = /^[a-z0-9_-]{4,20}$/; // 비밀번호 검사식
+	var re_name = /^[가-힣]{2,20}$/;//한글이름체크
+	var re_tel = /^[0-9]{8,11}$/;
+
+	var 
+		form = $('.form'), 
+		func_emailID = $('#f_emailID'), 
+		func_pw1 = $('#f_pw1'), 
+		func_pw2 = $('#f_pw2'), 
+		func_name = $('#f_name'),
+		func_tel = $('#f_tel');		
+
+
+	form.submit( function() {
+
+
+
+
+
+
+		if (re_id.test(func_emailID.val()) != true) { // 아이디 검사
+			alert('[ID 입력 오류]\n정확한 이메일주소로 입력하여 주시기 바랍니다.');
+			f_emailID.focus();
+			return false;
+		} else if( !($('#f_mailCHK').is(":checked")) ){
+			alert('[이메일정보수신 오류]\n이메일 정보수신을 동의하셔야만 회원 가입이 가능합니다.');
+			$('#f_mailCHK').focus();
+			return false;
+    	} else if( !($('#f_memnotice').is(":checked")) ){
+			alert('[이용약관동의 오류]\n이용약관을 동의 하셔야만 회원가입이 됩니다. 약관 동의를 해주시기 바랍니다.');
+			$('#f_memnotice').focus();
+			return false;
+    	} else if( !($('#f_privacy').is(":checked")) ){
+			alert('[개인정보보호정책 동의오류]\n개인정보보호정책을 동의해야만 가입이 가능합니다.');
+			$('#f_privacy').focus();
+			return false;
+    	} else if(re_pw1.test(func_pw1.val()) != true) { // 비밀번호 검사
+			alert('[비밀번호 입력 오류]\n비밀번호는 숫자,알파벳,기호등으로 이루어진 4자이상 20자이하로 입력해 주세요.');
+			f_pw1.focus();
+			return false;
+		} else if(re_pw2.test(func_pw2.val()) != true) { // 비밀번호 검사
+			alert('[비밀번호확인 입력 오류]\n비밀번호는 숫자,알파벳,기호등으로 이루어진 4자이상 20자이하로 입력해 주세요.');
+			f_pw2.focus();
+			return false;
+		} else if(f_pw1.value != f_pw2.value) {
+			alert('[비밀번호입력오류]\n동일한 비밀번호를 숫자,알파벳,기호등으로 이루어진 4자이상 20자이하로 입력해 주세요.');
+			f_pw1.focus();
+			return false;
+		} else if(re_name.test(func_name.val()) != true) {
+			alert('[이름입력오류]\n이름은 한글로 이루어진 본인이름을 입력하여 주시기 바랍니다.');
+			f_name.focus();
+			return false;
+		} else if(re_tel.test(func_tel.val()) != true) { // 전화번호 검사
+			alert('[전화번호 입력 오류]\n"-" 를 제외한 정확한 전화번호를 입력해 주세요.');
+			f_tel.focus();
+			return false;
+		} else if (document.mem.elements['f_idCHK'].value <= 0 ){
+			alert('[아이디중복체크 오류]\n아이디 중복체크를 하셔야만 가입이 가능합니다.')
+			f_idCHK.focus();
+			return false;
+		} else if (document.mem.elements['f_idCHK'].value != document.mem.elements['f_emailID'].value){
+			alert('[아이디중복체크 오류]\n아이디 중복체크를 하신후 아이디를 수정하신것 같습니다. 다시한번 중복 체크를 하시기바랍니다.')
+			f_idCHK.focus();
+			return false;
+		}
+	});
+	tel.keydown( function() {
+		if(event.keyCode==109 || event.keyCode==189) {
+			return false;
+		}
+	});
+
+});
+// ]]>
+</script>
+
+<form action="JoinMemQuery.php" class="form" name="mem" method = "post">
+	<p>(*) 항목은 반드시 입력해 주세요.</p>
+	<ul>
+		<li>
+			<label for="f_emailID">ID(*):</label>
+			<input id="f_emailID" name="f_emailID" placeholder="아이디는 사용하시는 이메일로 입력하여 주시기 바랍니다." value="fsbhrge@feer.com">
+			이메일로 정보수신을 동의 하시겠습니까?
+			<input name="f_mailCHK" id="f_mailCHK" type="checkbox" value="yes" checked>
+			<a href="#" onClick="javascript:idCHK()"><span class="span_BTN" type="submit">아이디 중복확인</span></a>
+			<input type="hidden" id="f_idCHK" name="f_idCHK" value=0>
+		</li>
+		<li>
+			<label for="f_pw1">비밀번호입력:</label>
+			<input id="f_pw1" name="f_pw1" type="password" value="1234"/>
+			영문, 숫자, 언더스코어(_), 하이픈(-)이 포함된 6~18 문자.
+		</li>
+		<li>
+			<label for="f_pw2">비밀번호확인:</label>
+			<input id="f_pw2" name="f_pw2" type="password"value="1234" />
+			영문, 숫자, 언더스코어(_), 하이픈(-)이 포함된 6~18 문자.
+		</li>
+		<li>
+			<label for="f_name">이름:</label>
+			<input id="f_name" name="f_name" value="박중"/>
+			 한글로 이루어진 본인실명이름 .
+		</li>
+		<li>
+			<label for="f_tel">Tel(*):</label>
+			<input id="f_tel" name="f_tel" value='01025896324' />
+			하이픈(-)은 입력하지 마세요.
+		</li>
+		<li>이용약관동의
+			<input name="f_memnotice" id="f_memnotice" type="checkbox" value="yes" checked>
+		</li>
+		<li>개인정보보호정책
+			<input name="f_privacy" id="f_privacy" type="checkbox" value="yes" checked>
+		</li>
+	</ul>
+	<input type="submit" name="btnSubmit" id="btnSubmit" value="전송" />
+</form>

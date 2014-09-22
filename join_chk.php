@@ -20,5 +20,7 @@ if ($_POST['email']) {
   };
   echo $Ajax_return;
   mysql_close();
-};
+}else{
+  echo "<script>alert('정상적인 접근이 아닙니다.');location.replace('index.html')</script>";
+}
 ?> 
