@@ -139,7 +139,8 @@ if(!$mysql){
         <hr class="HR_orange100">
     </section>
     <section class="Box1024">
-        <form action="modify.php" class="form" name="mem" method = "post">
+        <form action="memQuery.php" class="form" name="mem" method = "post">
+           <input type="hidden" name="f_status" id="f_status" value = "edit">
         <span class="redNotice">
             * 기본정보만 입력 하셔도 사이트 이용이 가능합니다.<br>
             * 입출금 시에는 회원정보 수정란에 본인명의 통장계좌번호와 주민등록번호를 입력하시면 됩니다.<br>
